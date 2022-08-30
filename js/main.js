@@ -23,6 +23,7 @@ formBtn.addEventListener('click', (e) => {
     submitValidation();
 })
 
+// Responsible for making the eye button appear when pressing a key on password
 passwordInput.addEventListener('keyup', () => {
     if(passwordInput.value.length >= 1 && !iconError[3].classList.contains('disable')) {
         visibilityBox.classList.remove('disable');
@@ -36,6 +37,7 @@ passwordInput.addEventListener('keyup', () => {
     }
 })
 
+// Responsible for changing the input type from Text to Password 
 visibilityButton.addEventListener('click', () => {
     const visibilityOn = document.querySelector('.form__password-eye-open');
     const visibilityOff = document.querySelector('.form__password-eye-close');
