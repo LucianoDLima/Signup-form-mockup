@@ -1,0 +1,364 @@
+/* ===============  FONTS =============== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============  VARIABLES ===============*/
+:root {
+  /* ========= Colors ========= */
+  --clr-main: hsl(0, 0%, 100%);
+  --clr-terms-text: hsl(246, 25%, 77%);
+  --clr-input-placeholder: hsl(249, 10%, 26%);
+  --clr-trial-bg: hsl(248, 32%, 49%);
+  --clr-background: hsl(0, 100%, 74%);
+  --clr-claim-error: hsl(3, 37%, 65%);
+  --clr-button: hsl(154, 59%, 51%);
+  --clr-input-border: rgba(0, 0, 0, .3);
+  --clr-input-border-active: rgba(0, 0, 0, .6);
+  --clr-input-border-error: rgba(252, 0, 0, 0.6);
+  --clr-input-border-completed: rgba(2, 196, 18, 0.6);
+
+  /* =============== TYPOGRAPHY =============== */
+  /* ========= Font size, weight and line height ========= */
+  --fs-main: 1rem;
+  --fs-h1: 1.74rem;
+  --fs-label: .93rem;
+  --fs-claim-error-text: 1rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-h1: 1.3;
+  --lh-p: 1.63;
+
+  /* =============== OTHER  =============== */
+  /* ========= Border ========= */
+  --br-50: .35rem;
+  --br-75: .55rem;
+  --br-100: .65rem;
+  --input-border: 2px solid rgba(0, 0, 0, .6);
+  --input-border-error: 2px solid rgba(red .6);
+
+  /* ========= Box shadow ========= */
+  --shadow-form: 0 8px rgba(0, 0, 0, .2);
+
+  /* ========= Widths, height and position ========= */
+  --form-width: 33.75rem;
+  --input-height: 3.5rem;
+  --top-label: 1.15rem;
+  --left-label: 1.17rem;
+}
+
+/* ===============  RESET ===============*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= Remove list style ========= */
+li, ul, ol {
+  list-style: none;
+}
+
+/* ========= Remove the underline from links ========= */
+a {
+  text-decoration: none;
+}
+
+/* ========= Inherit fonts for inputs and buttons ========= */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ========= Remove animations and transitions for people that prefer not to see them ========= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =============== UTILITY =============== */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =============== BASE =============== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url(../../images/bg-intro-mobile.png);
+  background-size: contain;
+  background-position: center;
+  background-color: var(--clr-background);
+  
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+p {
+  font-size: var(--fs-main);
+  line-height: var(--lh-p);
+}
+
+/* =============== MAIN =============== */
+.form {
+  padding-block: 5.7rem;
+  padding-inline: 1.5rem;
+  flex-direction: column;
+}
+
+/* ========= FORM INFORMATION - THE LEFT SIDE ========= */
+.form__information {
+  text-align: center;
+  color: var(--clr-main);
+  margin-bottom: 3.88rem;
+}
+
+.form__information h1 {
+  line-height: var(--lh-h1);
+  margin-bottom: 1.4rem;
+}
+
+.form__information p {
+  line-height: var(--lh-p);
+}
+
+/* ========= FORM SIGN UP - THE RIGHT SIDE ========= */
+
+.form__sign-up {
+  flex-direction: column;
+}
+
+.form__free-trial {
+  text-align: center;
+  color: var(--clr-main);
+  background-color: var(--clr-trial-bg);
+  padding: 1.08rem 3rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--br-100);
+  box-shadow: var(--shadow-form);
+  width: 100%;
+}
+
+.form__free-trial span {
+  font-weight: var(--fw-semibold);
+}
+
+/* ========= THE FORM ========= */
+
+.form__inputs {
+  background-color: var(--clr-main);
+  border-radius: var(--br-100);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-form);
+  
+}
+
+.form__input-box {
+  position: relative;
+  
+}
+
+.form__input {
+  height: var(--input-height);
+  width: 100%;
+  border-radius: var(--br-50);
+  outline: none;
+  border: 1px solid var(--clr-input-border);
+  padding-inline: 1.2rem;
+}
+
+.form__input:focus {
+  border: 2px solid var(--clr-input-border-active);
+}
+
+.form__label {
+  position: absolute;
+  left: var(--left-label);
+  top: var(--top-label);
+  font-size: var(--fs-label);
+  background-color: var(--clr-main);
+  color: var(--clr-input-placeholder);
+  transition: all 200ms ease-in;
+  padding: 0 .15rem;
+  cursor: text;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+  --top-label: -.45rem;
+  --fs-label: .8rem;
+  --left-label: .8rem;
+}
+
+/* ========= ERROR MESSAGES AND IMAGES FOR MISSING INFO ON INPUT (JAVASCRIPT) ========= */
+
+.disable {
+  display: none;
+}
+
+.form__claim-error-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1.7rem;
+  /* pointer-events: none; */
+}
+
+.form__claim-error-text,
+.form__claim-error-text2,
+#password-too-short,
+#mail-error {
+  text-align: right;
+  font-style: italic;
+  font-size: .8rem;
+  color: var(--clr-claim-error);
+}
+
+#mail-placeholder {
+  color: var(--clr-claim-error);
+  font-style: italic;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  pointer-events: none;
+}
+
+.form__eye-password-visibility {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.9rem;
+}
+
+.form__eye-password-visibility a {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: -.3rem;
+  right: -.45rem;
+  cursor: pointer;
+  transition: all 100ms;
+}
+
+.form__eye-password-visibility:hover > a {
+  background-color: rgba(168, 96, 96, 0.3);
+  border-radius: 50%;
+}
+
+.form__eye-password-visibility:active > a {
+  background-color: rgba(168, 96, 96, 0.8)
+}
+
+.form__password-eye-close,
+.form__password-eye-open {
+  position: absolute;
+  pointer-events: none;
+  top: -.01rem;
+  right: -.2rem;
+}
+
+
+/* ========= FORM BUTTON + TERMS AND SERVICES ========= */
+
+.form__claim-btn {
+  border-radius: var(--br-50);
+  border: none;
+  color: var(--clr-main);
+  background-color: var(--clr-button);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  height: 3.5rem;
+  box-shadow: inset 0 -5px rgba(0, 0, 0, .1),
+              inset 0 2px rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.form__claim-btn:active {
+  box-shadow: none;
+  font-size: calc(var(--fs-main) - .01rem);
+}
+
+.form__terms {
+  color: var(--clr-terms-text);
+  font-size: 11px;
+  text-align: center;
+  margin-top: -.3rem;
+  padding-inline: 1rem;
+  line-height: 1.8;
+  margin-bottom: -.05rem;
+}
+
+.form__terms a {
+  font-weight: var(--fw-bold);
+  color: var(--clr-background);
+  
+}
+
+/* ========= MEDIA QUERIES ========= */
+
+@media screen and (min-width:968px) {
+  :root {
+    --fs-h1: 3.12rem;
+    --lh-h1: 1.1;
+    --left-label: 1.85rem;
+    --top-label: 1.14rem;
+  }
+
+  /* == Base == */
+  body {
+    background-image: url(../images/bg-intro-desktop.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  /* == Main == */
+  .form {
+    flex-direction: row;
+    padding-block: unset;
+    gap: 4.6rem;
+  }
+
+  /* == Form information - the left side == */
+  .form__information {
+    max-width: 31rem;
+    text-align: start;
+    transform: translateY(2.16rem);
+  }
+
+  .form__information h1 {
+    word-spacing: -1.1px;
+    letter-spacing: -.3px;
+    margin-bottom: 1.75rem;
+  }
+
+  /* == The form == */
+  .form__inputs {
+    width: var(--form-width);
+    padding: 2.5rem;
+    gap: 1.25rem;
+  }
+
+  .form__input {
+    padding-inline: 1.5rem;
+  }
+
+  .form__label {
+    
+    font-weight: var(--fw-medium);
+    letter-spacing: -.25px;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="center">
+  <main class="form center">
+    <div class="form__information">
+      <h1>Learn to code by watching others</h1>
+      <p>
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable.
+      </p>
+    </div>
+
+    <form class="form__sign-up center">
+      <p class="form__free-trial"><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+
+      <div class="form__inputs">
+
+        <!-- Input box for the Name -->
+        <div class="form__input-box">
+          <input id="name" class="form__input" type="text" placeholder=" ">
+          <label for="name" class="form__label">First Name</label>
+          <div class="form__claim-error-icon disable"><img src="images/icon-error.svg" alt="Error symbol for when you haven't filled the form"></div>
+          <p class="form__claim-error-text disable">First Name cannot be empty</p>
+          <p class="form__claim-error-text2 disable">No numbers or special characters</p>
+        </div>
+
+        <!-- Input box for the Last Name -->
+        <div class="form__input-box">
+          <input class="form__input teste" id="lname" type="text" placeholder=" ">
+          <label class="form__label" for="lname">Last Name</label>
+          <div class="form__claim-error-icon disable"><img src="images/icon-error.svg" alt="Error symbol for when you haven't filled the form"></div>
+          <p class="form__claim-error-text disable">Last Name cannot be empty</p>
+          <p class="form__claim-error-text2 disable">No numbers or special characters</p>
+        </div>
+
+        <!-- Input box for the Email -->
+        <div class="form__input-box">
+          <input class="form__input" id="email" type="text" placeholder=" ">
+          <label class="form__label" for="email">Email Address</label>
+          <div class="form__claim-error-icon disable"><img src="images/icon-error.svg" alt="Error symbol for when you haven't filled the form"></div>
+          <p class="form__claim-error-text disable">Email cannot be empty</p>
+          <p id="mail-error" class="disable">Looks like this is not an email</p>
+          <p id="mail-placeholder" class="disable">email@example.com</p>
+        </div>
+
+        <!-- Input box for the Password -->
+        <div class="form__input-box">
+          <input class="form__input" id="password" type="password" placeholder=" ">
+          <label class="form__label" form="password" for="password">Password</label>
+          <div class="form__claim-error-icon disable">
+            <img src="images/icon-error.svg" alt="Error symbol for when you haven't filled the form">
+          </div>
+          <div class="form__eye-password-visibility disable">
+            <a role="button"></a>
+            <img class="form__password-eye-close" src="images/eye-close.png">
+            <img class="form__password-eye-open disable" src="images/eye-open.png">
+          </div>
+          <p id="password-too-short" class="disable">Password has to have at least 6 characters</p>
+          <p class="form__claim-error-text disable">Password cannot be empty</p>
+        </div>
+
+        <button id="formBtn" class="form__claim-btn" type="submit">Claim your free trial</button>
+        <p class="form__terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+      </div>
+    </form>
+  </main>
+  
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
